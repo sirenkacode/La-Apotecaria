@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
+body {
+  padding-top: 80px;
+}
 .navbar {
   background-color: #000 !important;
   font-family: 'Playfair Display', serif;
+   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
 
   .navbar-brand,
   .nav-link {
@@ -10,6 +18,7 @@
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+  
 
     &:hover {
       color: #cbb1a0 !important;

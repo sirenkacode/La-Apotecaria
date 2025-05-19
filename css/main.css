@@ -32,9 +32,18 @@ a:hover {
   text-align: center;
 }
 
+body {
+  padding-top: 80px;
+}
+
 .navbar {
   background-color: #000 !important;
   font-family: "Playfair Display", serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
 }
 .navbar .navbar-brand,
 .navbar .nav-link {
@@ -463,6 +472,10 @@ a:hover {
   line-height: 1.8;
 }
 
+.fondo-beige {
+  background-color: #f2e9dc !important;
+}
+
 .seccion-decants {
   padding: 4rem 2rem;
 }
@@ -504,9 +517,6 @@ a:hover {
 .seccion-decants .card-decant small {
   font-size: 0.8rem;
   color: #666;
-}
-.seccion-decants.fondo-beige {
-  background-color: #f2e9dc;
 }
 
 .seccion-packs {
@@ -600,6 +610,292 @@ a:hover {
 }
 .seccion-arma-pack .btn-solicitar:hover {
   background-color: #333;
+}
+
+.banner-slide {
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.banner-overlay {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.seccion-perfumes {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.seccion-perfumes h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin: 2rem 0 2rem;
+  text-transform: uppercase;
+}
+
+.perfumes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.perfume-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.perfume-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.perfume-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.perfume-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.perfume-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.seccion-perfumes#stock {
+  background-color: #f6e8e4;
+}
+
+.grid-decants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.card-decant {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+.card-decant:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.card-decant img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 0px;
+  object-fit: cover;
+}
+.card-decant h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.card-decant p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-hero {
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  color: #fff !important;
+  padding: 5rem 1rem;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+.blog-hero h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.blog-hero p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.blog-section {
+  background-color: #fff;
+  padding: 4rem 2rem;
+}
+.blog-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.blog-section .blog-post {
+  font-family: "Playfair Display", serif;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+.blog-section .blog-post img {
+  border-radius: 0;
+}
+.blog-section .blog-post h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.blog-section .blog-post p {
+  font-size: 1rem;
+  color: #555;
+}
+.blog-section .blog-post .btn {
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: "Playfair Display", serif;
+}
+.blog-section .blog-post:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.contacto {
+  min-height: calc(100vh - 200px);
+  padding: 4rem 2rem;
+  font-family: "Playfair Display", serif;
+  background-color: #f2e9dc;
+}
+.contacto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.contacto p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.contacto form .form-label {
+  font-weight: 600;
+}
+.contacto form .form-control {
+  border-radius: 0;
+  font-family: "Playfair Display", serif;
+}
+.contacto form .btn {
+  border-radius: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .banner-slide {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+  .banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    clip-path: none;
+  }
+  .banner-overlay p {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .blog-hero h1 {
+    font-size: 2rem;
+  }
+  .blog-hero p {
+    font-size: 1rem;
+  }
+  .blog-section {
+    padding: 3rem 1rem;
+  }
+  .blog-section .blog-post {
+    text-align: center;
+  }
+}
+.imagen-vogue {
+  background-color: #fff;
+}
+.imagen-vogue .img-vogue {
+  max-width: 90%;
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.landing-welcome {
+  background-color: #fff;
+  font-family: "Playfair Display", serif;
+  color: #1a1a1a;
+}
+.landing-welcome h1 {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.landing-welcome .intro-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #666;
+}
+.landing-welcome p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.landing-welcome strong {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=main.css.map */

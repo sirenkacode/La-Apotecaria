@@ -151,6 +151,115 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+
+    const perfumesIndividuales = {
+        "myway": {
+          titulo: "My Way – Armani",
+          descripcion: "Notas: jazmín, vainilla, bergamota. Ideal para uso diario elegante."
+        },
+        "lavie": {
+          titulo: "La Vie Est Belle – Lancôme",
+          descripcion: "Notas: pera, iris, praliné. Dulce y empoderado."
+        },
+        "lightblue": {
+          titulo: "Light Blue – D&G",
+          descripcion: "Notas: limón, manzana, cedro. Cítrico y juvenil."
+        },
+        "fantasy": {
+          titulo: "Fantasy – Britney Spears",
+          descripcion: "Notas: kiwi, chocolate blanco, almizcle. Divertido y coqueto."
+        },
+        "burberry": {
+          titulo: "Burberry Her Elixir",
+          descripcion: "Notas: fresa, ámbar, vainilla. Sexy e intenso."
+        },
+        "angel": {
+          titulo: "Angel Elixir – Mugler",
+          descripcion: "Notas: pimienta rosa, flor de azahar. Misterioso y potente."
+        },
+        "libre": {
+            titulo: "Libre Intense – YSL",
+            descripcion: "Notas: lavanda, vainilla, ámbar. Fuerte y sofisticado."
+          },
+          "idole": {
+            titulo: "Idôle – Lancôme",
+            descripcion: "Notas: rosa, jazmín, almizcle blanco. Floral limpio y moderno."
+          },
+          "goodgirl": {
+            titulo: "Good Girl – Carolina Herrera",
+            descripcion: "Notas: almendra, café, haba tonka. Sexy y misterioso."
+          },
+          "si": {
+            titulo: "Si – Armani",
+            descripcion: "Notas: cassis, rosa, vainilla. Elegancia sin esfuerzo."
+          },
+          "olympea": {
+            titulo: "Olympéa – Paco Rabanne",
+            descripcion: "Notas: sal, vainilla, jazmín. Dulce, cálido y atrevido."
+          },
+          "alien": {
+            titulo: "Alien – Mugler",
+            descripcion: "Notas: jazmín, madera de cachemira. Místico y adictivo."
+          },
+          "verygoodgirl": {
+            titulo: "Very Good Girl – Carolina Herrera",
+            descripcion: "Notas: lichi, rosa, vainilla. Frutal y sexy."
+          },
+          "daisy": {
+            titulo: "Daisy – Marc Jacobs",
+            descripcion: "Notas: violeta, fresa, gardenia. Joven, alegre, floral."
+          },
+          "missdior": {
+            titulo: "Miss Dior",
+            descripcion: "Notas: rosa de Grasse, peonía, almizcle. Romántico y vibrante."
+          },
+          "monparis": {
+            titulo: "Mon Paris – YSL",
+            descripcion: "Notas: fresa, pachuli, flor blanca. Chispeante y atrevido."
+          },
+          "bloom": {
+            titulo: "Gucci Bloom",
+            descripcion: "Notas: jazmín, nardo, raíz de lirio. Floral blanco opulento."
+          },
+          "linterdit": {
+            titulo: "L’Interdit – Givenchy",
+            descripcion: "Notas: azahar, vetiver, pachuli. Contrastes entre claro y oscuro."
+          },
+          "brightcrystal": {
+            titulo: "Bright Crystal – Versace",
+            descripcion: "Notas: granada, peonía, yuzu. Alegre y brillante."
+          },
+          "paradoxe": {
+            titulo: "Prada Paradoxe",
+            descripcion: "Notas: neroli, ámbar, almizcles. Moderno y femenino."
+          },
+          "valentino": {
+            titulo: "Donna Born In Roma – Valentino",
+            descripcion: "Notas: vainilla bourbon, jazmín, grosella negra. Chic y rebelde."
+          }
+        };
+      
+      document.querySelectorAll(".card-decant[data-perfume]").forEach(card => {
+        card.addEventListener("click", () => {
+          const key = card.dataset.perfume;
+          const info = perfumesIndividuales[key];
+          if (info) {
+            document.getElementById("modalPerfumeTitle").innerText = info.titulo;
+            document.getElementById("modalPerfumeBody").innerText = info.descripcion;
+            new bootstrap.Modal(document.getElementById("modalPerfume")).show();
+          }
+        });
+      });
+
+      const navbarPerfumes = document.getElementById("navbarPerfumes");
+if (navbarPerfumes) {
+  navbarPerfumes.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown-menu")) {
+      window.location.href = "/perfumes.html";
+    }
+  });
+}
+
   
   });
   

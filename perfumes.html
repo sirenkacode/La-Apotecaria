@@ -9,97 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
-  <style>
-    .banner-slide {
-      position: relative;
-      height: 70vh;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .banner-overlay {
-      background-color: #000;
-      color: #fff;
-      padding: 2rem;
-      width: 40%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .seccion-perfumes {
-      padding: 4rem 2rem;
-      background-color: #fff;
-    }
-
-    .seccion-perfumes h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-    }
-
-    .perfumes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .perfume-card {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .perfume-card img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .perfume-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .perfume-card p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .banner-slide {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: 40vh;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top center;
-      }
-
-      .banner-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: auto;
-        padding: 1.5rem;
-        clip-path: none;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -126,12 +35,21 @@
             <ul class="dropdown-menu text-center">
               <li><a class="dropdown-item" href="/decants.html#individuales">Individuales</a></li>
               <li><a class="dropdown-item" href="/decants.html#packs">Packs</a></li>
-              <li><a class="dropdown-item" href="/decants.html#personalizado">Arma tu propio pack</a></li>
+              <li><a class="dropdown-item" href="/decants.html#personalizado">Personalizados</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Perfumes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/perfumes.html" id="navbarPerfumes" role="button" data-bs-toggle="dropdown">
+              Perfumes
+            </a>
+            <ul class="dropdown-menu text-center">
+              <li><a class="dropdown-item" href="/perfumes.html#stock">Stock</a></li>
+              <li><a class="dropdown-item" href="/perfumes.html#encargo">Encargo</a></li>
+              <li><a class="dropdown-item" href="/perfumes.html#pedido-especial">Pedido Especial</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -145,17 +63,17 @@
     </div>
   </div>
 
-  <!-- STOCK DISPONIBLE -->
-  <section class="seccion-perfumes" id="stock">
+ <!-- STOCK DISPONIBLE -->
+ <section class="seccion-perfumes" id="stock">
     <div class="container text-center">
       <h2>Stock disponible</h2>
-      <div class="perfumes-grid">
-        <!-- Tarjetas de perfumes disponibles aquí -->
-        <div class="perfume-card">
-          <img src="assets/img/perfume-ejemplo.jpg" alt="Nombre del perfume">
-          <h3>Angel Elixir – Mugler</h3>
-          <p>EDP 100ml | Disponible para envío inmediato</p>
-        </div>
+      <div class="grid-decants">
+        <div class="card-decant" data-perfume="angel"><img src="assets/img/perfume1.jpg" alt="Angel Elixir"><h3>Angel Elixir – Mugler</h3><p>EDP 100ml | Envío inmediato</p></div>
+        <div class="card-decant" data-perfume="burberry"><img src="assets/img/perfume2.jpg" alt="Burberry Her Elixir"><h3>Burberry Her Elixir</h3><p>EDP 100ml | Envío inmediato</p></div>
+        <div class="card-decant" data-perfume="myway"><img src="assets/img/perfume3.jpg" alt="My Way"><h3>My Way – Armani</h3><p>EDP 100ml | Envío inmediato</p></div>
+        <div class="card-decant" data-perfume="fantasy"><img src="assets/img/perfume4.jpg" alt="Fantasy"><h3>Fantasy – Britney</h3><p>EDP 100ml | Envío inmediato</p></div>
+        <div class="card-decant" data-perfume="lightblue"><img src="assets/img/perfume5.jpg" alt="Light Blue"><h3>Light Blue – D&G</h3><p>EDP 100ml | Envío inmediato</p></div>
+        <div class="card-decant" data-perfume="lavie"><img src="assets/img/perfume6.jpg" alt="La Vie Est Belle"><h3>La Vie Est Belle</h3><p>EDP 100ml | Envío inmediato</p></div>
       </div>
     </div>
   </section>
@@ -164,18 +82,78 @@
   <section class="seccion-perfumes" id="encargo">
     <div class="container text-center">
       <h2>Disponibles por encargo</h2>
-      <div class="perfumes-grid">
-        <!-- Tarjetas de perfumes por encargo aquí -->
-        <div class="perfume-card">
-          <img src="assets/img/perfume-ejemplo.jpg" alt="Nombre del perfume">
-          <h3>Libre Intense – YSL</h3>
-          <p>EDP 90ml | Consultar tiempo de entrega</p>
-        </div>
+      <div class="grid-decants">
+        <div class="card-decant" data-perfume="libre"><img src="assets/img/perfume1.jpg" alt="Libre Intense"><h3>Libre Intense – YSL</h3><p>EDP 90ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="idole"><img src="assets/img/perfume2.jpg" alt="Idôle"><h3>Idôle – Lancôme</h3><p>EDP 75ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="goodgirl"><img src="assets/img/perfume3.jpg" alt="Good Girl"><h3>Good Girl – Carolina Herrera</h3><p>EDP 80ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="si"><img src="assets/img/perfume4.jpg" alt="Si Armani"><h3>Si – Armani</h3><p>EDP 100ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="olympea"><img src="assets/img/perfume5.jpg" alt="Olympéa"><h3>Olympéa – Paco Rabanne</h3><p>EDP 80ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="alien"><img src="assets/img/perfume6.jpg" alt="Alien"><h3>Alien – Mugler</h3><p>EDP 90ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="verygoodgirl"><img src="assets/img/perfume1.jpg" alt="Very Good Girl"><h3>Very Good Girl – CH</h3><p>EDP 80ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="daisy"><img src="assets/img/perfume2.jpg" alt="Daisy"><h3>Daisy – Marc Jacobs</h3><p>EDT 100ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="missdior"><img src="assets/img/perfume3.jpg" alt="Miss Dior"><h3>Miss Dior</h3><p>EDP 100ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="monparis"><img src="assets/img/perfume4.jpg" alt="Mon Paris"><h3>YSL Mon Paris</h3><p>EDP 90ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="bloom"><img src="assets/img/perfume5.jpg" alt="Gucci Bloom"><h3>Gucci Bloom</h3><p>EDP 100ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="linterdit"><img src="assets/img/perfume6.jpg" alt="L’Interdit"><h3>L’Interdit – Givenchy</h3><p>EDP 80ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="brightcrystal"><img src="assets/img/perfume1.jpg" alt="Bright Crystal"><h3>Versace Bright Crystal</h3><p>EDT 90ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="paradoxe"><img src="assets/img/perfume2.jpg" alt="Prada Paradoxe"><h3>Prada Paradoxe</h3><p>EDP 90ml | Por encargo</p></div>
+        <div class="card-decant" data-perfume="valentino"><img src="assets/img/perfume3.jpg" alt="Born In Roma"><h3>Donna Born In Roma – Valentino</h3><p>EDP 100ml | Por encargo</p></div>
       </div>
     </div>
   </section>
 
+<!-- Pedido múltiple -->
+<section class="seccion-arma-pack fondo-beige" id="pedido-especial">
+    <div class="container text-center">
+      <h2>Pedido Especial</h2>
+      <p>¿Querés consultar por un perfume que no tenemos enlistado o encargar varios perfumes a la vez? Podemos ayudarte a conseguirlos. Consultanos sin compromiso.</p>
+      <button class="btn-solicitar">Consultar</button>
+    </div>
+  </section>
+  
+
+    <!-- Modal de información de perfume -->
+<div class="modal fade" id="modalPerfume" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPerfumeTitle">Título del Perfume</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="modalPerfumeBody">
+          <!-- Aquí se carga la descripción -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- FOOTER + JS -->
+   
+  <footer class="footer-apotecaria">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">Sobre nosotras</a>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Cómo comprar</a>
+        <a href="#">Términos y condiciones</a>
+      </div>
+      <div class="footer-redes">
+        <span>Seguinos:</span>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">TikTok</a>
+      </div>
+      <div class="footer-copy">
+        <small>&copy; 2025 La Apotecaria – Todos los derechos reservados</small>
+      </div>
+    </div>
+  </footer>
+
+
+  
+  
+  <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba">↑</button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>

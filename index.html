@@ -14,7 +14,7 @@
 
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container justify-content-center">
-      <a class="navbar-brand fw-bold" href="#">La Apotecaria</a>
+      <a class="navbar-brand fw-bold" href="/index.html">La Apotecaria</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,9 +46,18 @@
             </ul>
           </li>
   
-          <li class="nav-item"><a class="nav-link" href="/perfumes.html">Perfumes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/perfumes.html" id="navbarPerfumes" role="button" data-bs-toggle="dropdown">
+              Perfumes
+            </a>
+            <ul class="dropdown-menu text-center">
+              <li><a class="dropdown-item" href="/perfumes.html#stock">Stock</a></li>
+              <li><a class="dropdown-item" href="/perfumes.html#encargo">Encargos</a></li>
+              <li><a class="dropdown-item" href="/perfumes.html#pedido-multiple">Pedido Especial</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contacto.html">Contacto</a></li>
   
         </ul>
       </div>
@@ -72,8 +81,9 @@
       <div class="carousel-item active">
         <div class="banner-slide" style="background-image: url('assets/img/banner1.png');">
           <div class="banner-overlay">
-            <h2>Fragancias con alma</h2>
-            <p>Curadas con amor y misterio botánico.</p>
+            <h2>🌿 Bienvenida a La Apotecaria</h2>
+            <p>El placer de elegir tu perfume como un acto de amor propio.</p>
+            <a href="/bienvenida.html" class="btn btn-light mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -84,6 +94,7 @@
           <div class="banner-overlay">
             <h2>Exploración olfativa</h2>
             <p>Decants accesibles para curiosas sin mapa.</p>
+            <a href="/landing-packs.html" class="btn btn-light mt-3">Ver más</a>
           </div>
         </div>
       </div>
@@ -94,6 +105,7 @@
           <div class="banner-overlay">
             <h2>Perfumes íntimos</h2>
             <p>Un ritual diario hecho a medida.</p>
+            <a href="/landing-packs.html" class="btn btn-light mt-3">Ver más</a>
           </div>
         </div>
       </div>

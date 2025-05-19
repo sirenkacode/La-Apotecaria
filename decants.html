@@ -14,7 +14,7 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container justify-content-center">
-      <a class="navbar-brand fw-bold" href="#">La Apotecaria</a>
+      <a class="navbar-brand fw-bold" href="/index.html">La Apotecaria</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,9 +47,18 @@
             </ul>
           </li>
   
-          <li class="nav-item"><a class="nav-link" href="/perfumes.html">Perfumes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/perfumes.html" id="navbarPerfumes" role="button" data-bs-toggle="dropdown">
+              Perfumes
+            </a>
+            <ul class="dropdown-menu text-center">
+              <li><a class="dropdown-item" href="/perfumes.html#stock">Stock</a></li>
+              <li><a class="dropdown-item" href="/perfumes.html#encargo">Encargos</a></li>
+              <li><a class="dropdown-item" href="/perfumes.html#pedido-multiple">Pedido Especial</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contacto.html">Contacto</a></li>
   
         </ul>
       </div>
@@ -70,56 +79,56 @@
     <div class="container text-center">
       <h2>Decants Individuales</h2>
       <div class="grid-decants">
-        <div class="card-decant">
-          <img src="img/decant1.jpg" alt="Burberry Her" />
+        <div class="card-decant" data-perfume="myway">
+          <img src="./assets/img/her-burberry.png" alt="Burberry Her" />
           <h3>Burberry Her</h3>
           <p>Frutado, dulce, vibrante</p>
           <small>5ml – $450 | 10ml – $800</small>
         </div>
       
-        <div class="card-decant">
-          <img src="img/decant2.jpg" alt="Angel Elixir" />
+        <div class="card-decant" data-perfume="myway">
+          <img src="./assets/img/angel-elixir-mugler.webp" alt="Angel Elixir" />
           <h3>Angel Elixir</h3>
           <p>Floral, especiado, potente</p>
           <small>5ml – $470 | 10ml – $850</small>
         </div>
       
-        <div class="card-decant">
-          <img src="img/decant3.jpg" alt="My Way" />
+        <div class="card-decant" data-perfume="myway">
+          <img src="./assets/img/my-way-ga.png" alt="My Way" />
           <h3>My Way</h3>
           <p>Jazmín, vainilla, bergamota</p>
           <small>5ml – $460 | 10ml – $820</small>
         </div>
       
-        <div class="card-decant">
-          <img src="img/decant4.jpg" alt="Fantasy" />
+        <div class="card-decant" data-perfume="myway">
+          <img src="./assets/img/fantasy-bs.png" alt="Fantasy" />
           <h3>Fantasy</h3>
           <p>Dulce, exótico, nostálgico</p>
           <small>5ml – $420 | 10ml – $760</small>
         </div>
       
-        <div class="card-decant">
-          <img src="img/decant5.jpg" alt="Light Blue" />
+        <div class="card-decant" data-perfume="myway">
+          <img src="./assets/fonts/" alt="Light Blue" />
           <h3>Light Blue</h3>
           <p>Cítrico, limpio, fresco</p>
           <small>5ml – $430 | 10ml – $780</small>
         </div>
       
-        <div class="card-decant">
+        <div class="card-decant" data-perfume="myway">
           <img src="img/decant6.jpg" alt="Libre Intense" />
           <h3>Libre Intense</h3>
           <p>Lavanda, vainilla, ámbar</p>
           <small>5ml – $470 | 10ml – $860</small>
         </div>
       
-        <div class="card-decant">
+        <div class="card-decant" data-perfume="myway">
           <img src="img/decant7.jpg" alt="La Vie Est Belle" />
           <h3>La Vie Est Belle</h3>
           <p>Pera, iris, praliné</p>
           <small>5ml – $460 | 10ml – $820</small>
         </div>
       
-        <div class="card-decant">
+        <div class="card-decant" data-perfume="myway">
           <img src="img/decant8.jpg" alt="Idôle" />
           <h3>Idôle</h3>
           <p>Rosa, jazmín, almizcle</p>
@@ -137,31 +146,31 @@
   
       <!-- PACK 1 -->
       <div class="pack-card" data-pack="midnight">
-        <img src="assets/img/packs/midnight.jpg" alt="Midnight Affair" />
+        <img src="assets/img/midnight.png" alt="Midnight Affair" />
         <div class="pack-title">Midnight Affair</div>
       </div>
   
       <!-- PACK 2 -->
       <div class="pack-card" data-pack="candy">
-        <img src="assets/img/packs/candy.jpg" alt="Candylicious" />
+        <img src="assets/img/candy.png" alt="Candylicious" />
         <div class="pack-title">Candylicious</div>
       </div>
   
       <!-- PACK 3 -->
       <div class="pack-card" data-pack="summer">
-        <img src="assets/img/packs/summer.jpg" alt="Summer Glow" />
+        <img src="assets/img/summer.png" alt="Summer Glow" />
         <div class="pack-title">Summer Glow</div>
       </div>
   
       <!-- PACK 4 -->
       <div class="pack-card" data-pack="musk">
-        <img src="assets/img/packs/musk.jpg" alt="Musk Seduction" />
+        <img src="assets/img/musk.png" alt="Musk Seduction" />
         <div class="pack-title">Musk Seduction</div>
       </div>
   
       <!-- PACK 5 -->
       <div class="pack-card" data-pack="floral">
-        <img src="assets/img/packs/floral.jpg" alt="Floral & Fruity Twist" />
+        <img src="assets/img/floral.png" alt="Floral & Fruity Twist" />
         <div class="pack-title">Floral & Fruity Twist</div>
       </div>
     </div>
@@ -210,6 +219,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal de información de perfume -->
+<div class="modal fade" id="modalPerfume" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPerfumeTitle">Título del Perfume</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="modalPerfumeBody">
+          <!-- Aquí va la info -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
   
   <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba">↑</button>
 
