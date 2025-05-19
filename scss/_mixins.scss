@@ -1,0 +1,3 @@
+@mixin transicion-suave($propiedad: all, $duracion: 0.3s, $modo: ease-in-out) {
+    transition: $propiedad $duracion $modo;
+  }

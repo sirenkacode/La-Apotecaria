@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
+.navbar {
+  background-color: #000 !important;
+  font-family: 'Playfair Display', serif;
+
+  .navbar-brand,
+  .nav-link {
+    color: #fff !important;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: #cbb1a0 !important;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    background-color: #000;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+
+
+.banner-slide {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .banner-overlay {
+    background-color: #000;
+    color: #fff !important;
+    padding: 2rem;
+    width: 40% !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; // <-- centra horizontalmente
+    text-align: center;  // <-- alinea texto centrado
+    font-family: 'Playfair Display', serif;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    transition: all 0.4s ease-in-out;
+    animation: fadeInUp 0.8s ease forwards;
+  
+    h2 {
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-size: 3rem;
+    }
+  
+    p {
+      text-transform: lowercase;
+      color: #fff;
+      font-size: 2rem;
+    }
+  }
+  
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.carousel-indicators {
+  bottom: 1rem;
+
+  button {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    opacity: 0.5;
+    border: none;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+    border-radius: 0; // importante quitar redondeo
+    width: 40px;
+    height: 2px;
+    bottom: 2rem;
+  }
+
+  .active {
+    opacity: 1;
+    background-color: #cbb1a0; // o #fff si querés todo blanco
+  }
+}
+
+.seccion-mision {
+  height: 40vh; 
+  background-color: #f6e8e4;
+  color: #1a1a1a;
+  padding: 0 2rem;
+  font-family: 'Playfair Display', serif;
+
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+  .mision-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .decoracion {
+    width: 150px;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.3;
+  }
+
+  .texto {
+    max-width: 600px;
+    text-align: center;
+    z-index: 1;
+
+    h2 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+  }
+}
+
+.seccion-servicios {
+  background-color: #fff;
+  color: #1a1a1a;
+  padding: 4rem 2rem;
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .servicios-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .servicio {
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 120%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+}
+
+  
+@media (max-width: 768px) {
+  .banner-slide {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: #000;
+    position: relative;
+
+    .banner-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100% !important;
+      height: auto;
+      padding: 1.5rem;
+      clip-path: none;
+      text-align: center;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .banner-overlay {
+      padding-bottom: 3rem; // o más si hace falta
+    }
+  }
+  
+  .seccion-mision {
+    height: auto;
+    padding: 3rem 1rem;
+
+    .decoracion-hoja,
+    .decoracion-rosa {
+      display: none;
+    }
+
+    .mision-layout {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .decoracion {
+      width: 100px;
+    }
+
+    .texto {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .seccion-servicios {
+    .servicios-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .servicio {
+      flex: 1 1 30%;
+      max-width: 200px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+  
+}
+
+
