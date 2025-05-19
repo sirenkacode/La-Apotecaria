@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfumes | La Apotecaria</title>
+
+  <!-- Bootstrap + Tipografía -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .banner-slide {
+      position: relative;
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .banner-overlay {
+      background-color: #000;
+      color: #fff;
+      padding: 2rem;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .seccion-perfumes {
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+
+    .seccion-perfumes h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    .perfumes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .perfume-card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .perfume-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .perfume-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .perfume-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .banner-slide {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 40vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+
+      .banner-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+        clip-path: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container justify-content-center">
+      <a class="navbar-brand fw-bold" href="/index.html">La Apotecaria</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="nav">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/index.html" id="navbarInicio" role="button" data-bs-toggle="dropdown">Inicio</a>
+            <ul class="dropdown-menu text-center">
+              <li><a class="dropdown-item" href="/index.html#quienes-somos">Quiénes somos</a></li>
+              <li><a class="dropdown-item" href="/index.html#nuevos-ingresos">Nuevos ingresos</a></li>
+              <li><a class="dropdown-item" href="/index.html#nuestros-servicios">Nuestros servicios</a></li>
+              <li><a class="dropdown-item" href="/index.html#testimonios">Testimonios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/decants.html" id="navbarDecants" role="button" data-bs-toggle="dropdown">Decants</a>
+            <ul class="dropdown-menu text-center">
+              <li><a class="dropdown-item" href="/decants.html#individuales">Individuales</a></li>
+              <li><a class="dropdown-item" href="/decants.html#packs">Packs</a></li>
+              <li><a class="dropdown-item" href="/decants.html#personalizado">Arma tu propio pack</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Perfumes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <div class="banner-slide" style="background-image: url('assets/img/banner-perfumes.jpg');">
+    <div class="banner-overlay">
+      <h2>Perfumes</h2>
+      <p>Frascos completos seleccionados por La Apotecaria</p>
+    </div>
+  </div>
+
+  <!-- STOCK DISPONIBLE -->
+  <section class="seccion-perfumes" id="stock">
+    <div class="container text-center">
+      <h2>Stock disponible</h2>
+      <div class="perfumes-grid">
+        <!-- Tarjetas de perfumes disponibles aquí -->
+        <div class="perfume-card">
+          <img src="assets/img/perfume-ejemplo.jpg" alt="Nombre del perfume">
+          <h3>Angel Elixir – Mugler</h3>
+          <p>EDP 100ml | Disponible para envío inmediato</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR ENCARGO -->
+  <section class="seccion-perfumes" id="encargo">
+    <div class="container text-center">
+      <h2>Disponibles por encargo</h2>
+      <div class="perfumes-grid">
+        <!-- Tarjetas de perfumes por encargo aquí -->
+        <div class="perfume-card">
+          <img src="assets/img/perfume-ejemplo.jpg" alt="Nombre del perfume">
+          <h3>Libre Intense – YSL</h3>
+          <p>EDP 90ml | Consultar tiempo de entrega</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

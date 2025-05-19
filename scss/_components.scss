@@ -31,7 +31,13 @@
   }
 }
 
+.dropdown-menu {
+  border-radius: 0 !important;
+}
 
+.dropdown-item {
+  border-radius: 0 !important;
+}
 
 .banner-slide {
   position: relative;
@@ -71,6 +77,23 @@
       color: #fff;
       font-size: 2rem;
     }
+
+    a.btn {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      padding: 0.5rem 1.2rem;
+      border-radius: 0; 
+      transition: 0.3s;
+    
+      &:hover {
+        background-color: #cbb1a0;
+        color: #000;
+      }
+    }
+    
   }
   
 
@@ -97,7 +120,7 @@
     border: none;
     margin: 0 6px;
     transition: all 0.3s ease;
-    border-radius: 0; // importante quitar redondeo
+    border-radius: 0; 
     width: 40px;
     height: 2px;
     bottom: 2rem;
@@ -105,7 +128,7 @@
 
   .active {
     opacity: 1;
-    background-color: #cbb1a0; // o #fff si querés todo blanco
+    background-color: #cbb1a0; 
   }
 }
 
@@ -155,8 +178,52 @@
   }
 }
 
+.seccion-nuevos {
+  background-color: #fefefe;
+  padding: 4rem 2rem;
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .nuevos-carrusel {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card-perfume {
+    width: 180px;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 100%;
+      border-radius: 0px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      margin-bottom: 0.8rem;
+    }
+
+    .nombre {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .desc {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+  }
+}
+
 .seccion-servicios {
-  background-color: #fff;
+  background-color: #f2e9dc !important;
   color: #1a1a1a;
   padding: 4rem 2rem;
 
@@ -195,6 +262,109 @@
     }
   }
 }
+
+.seccion-testimonios {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  font-family: 'Playfair Display', serif;
+
+  h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  .testimonios-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .testimonio {
+    max-width: 300px;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #333;
+    position: relative;
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      display: block;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  }
+}
+
+.footer-apotecaria {
+  background-color: #000;
+  color: #fff;
+  padding: 3rem 2rem;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.75rem;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #cbb1a0;
+    }
+  }
+
+  .footer-links,
+  .footer-redes {
+    margin-bottom: 1rem;
+  }
+
+  .footer-redes span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .footer-copy {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0%;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #cbb1a0;
+    color: #000;
+  }
+}
+
+
 
   
 @media (max-width: 768px) {
@@ -286,6 +456,35 @@
       }
     }
   }
+
+  .seccion-testimonios {
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .testimonios-grid {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+  
+    .testimonio {
+      font-size: 1rem;
+    }
+  }
+
+  .footer-apotecaria {
+    a {
+      display: inline-block;
+      margin: 0.5rem 0.5rem;
+    }
+  
+    .footer-redes span {
+      margin-bottom: 0.3rem;
+    }
+  }
+  
+  
   
 }
 

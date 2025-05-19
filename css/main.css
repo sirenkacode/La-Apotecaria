@@ -59,6 +59,14 @@ a:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+.dropdown-menu {
+  border-radius: 0 !important;
+}
+
+.dropdown-item {
+  border-radius: 0 !important;
+}
+
 .banner-slide {
   position: relative;
   height: 70vh;
@@ -95,6 +103,20 @@ a:hover {
   text-transform: lowercase;
   color: #fff;
   font-size: 2rem;
+}
+.banner-slide .banner-overlay a.btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0;
+  transition: 0.3s;
+}
+.banner-slide .banner-overlay a.btn:hover {
+  background-color: #cbb1a0;
+  color: #000;
 }
 @keyframes fadeInUp {
   from {
@@ -168,8 +190,46 @@ a:hover {
   line-height: 1.8;
 }
 
+.seccion-nuevos {
+  background-color: #fefefe;
+  padding: 4rem 2rem;
+}
+.seccion-nuevos h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.seccion-nuevos .nuevos-carrusel {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.seccion-nuevos .card-perfume {
+  width: 180px;
+  font-family: "Playfair Display", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.seccion-nuevos .card-perfume img {
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 0.8rem;
+}
+.seccion-nuevos .card-perfume .nombre {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.seccion-nuevos .card-perfume .desc {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
 .seccion-servicios {
-  background-color: #fff;
+  background-color: #f2e9dc !important;
   color: #1a1a1a;
   padding: 4rem 2rem;
 }
@@ -202,6 +262,96 @@ a:hover {
   font-size: 1.1rem;
   line-height: 1.5;
   text-align: center;
+}
+
+.seccion-testimonios {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  font-family: "Playfair Display", serif;
+}
+.seccion-testimonios h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+.seccion-testimonios .testimonios-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.seccion-testimonios .testimonio {
+  max-width: 300px;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #333;
+  position: relative;
+}
+.seccion-testimonios .testimonio p {
+  margin-bottom: 0.5rem;
+}
+.seccion-testimonios .testimonio span {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-apotecaria {
+  background-color: #000;
+  color: #fff;
+  padding: 3rem 2rem;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+.footer-apotecaria a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.footer-apotecaria a:hover {
+  color: #cbb1a0;
+}
+.footer-apotecaria .footer-links,
+.footer-apotecaria .footer-redes {
+  margin-bottom: 1rem;
+}
+.footer-apotecaria .footer-redes span {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.footer-apotecaria .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0%;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-top:hover {
+  background-color: #cbb1a0;
+  color: #000;
 }
 
 @media (max-width: 768px) {
@@ -275,6 +425,24 @@ a:hover {
   .seccion-servicios .servicio p {
     font-size: 0.95rem;
   }
+  .seccion-testimonios h2 {
+    font-size: 2rem;
+  }
+  .seccion-testimonios .testimonios-grid {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .seccion-testimonios .testimonio {
+    font-size: 1rem;
+  }
+  .footer-apotecaria a {
+    display: inline-block;
+    margin: 0.5rem 0.5rem;
+  }
+  .footer-apotecaria .footer-redes span {
+    margin-bottom: 0.3rem;
+  }
 }
 .hero {
   background: url("../assets/img/bg-hero.jpg") no-repeat center center/cover;
@@ -286,13 +454,152 @@ a:hover {
   font-size: 4rem;
 }
 .hero .btn {
-  border-radius: 2rem;
+  border-radius: 0rem;
   padding: 0.75rem 1.5rem;
 }
 
 #filosofia p {
   font-size: 1.2rem;
   line-height: 1.8;
+}
+
+.seccion-decants {
+  padding: 4rem 2rem;
+}
+.seccion-decants h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+.seccion-decants .grid-decants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+.seccion-decants .card-decant {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+.seccion-decants .card-decant img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 0px;
+}
+.seccion-decants .card-decant h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.seccion-decants .card-decant p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.seccion-decants .card-decant small {
+  font-size: 0.8rem;
+  color: #666;
+}
+.seccion-decants.fondo-beige {
+  background-color: #f2e9dc;
+}
+
+.seccion-packs {
+  background-color: #f2e9dc !important;
+  padding: 4rem 2rem;
+}
+.seccion-packs .titulo-packs {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.seccion-packs .packs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+.seccion-packs .pack-card {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+.seccion-packs .pack-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.seccion-packs .pack-card .pack-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+.modal-content {
+  border-radius: 0 !important;
+  font-family: "Playfair Display", serif;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-body {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.seccion-arma-pack {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.seccion-arma-pack h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.seccion-arma-pack p {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+.seccion-arma-pack .btn-solicitar {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+.seccion-arma-pack .btn-solicitar:hover {
+  background-color: #333;
 }
 
 /*# sourceMappingURL=main.css.map */
