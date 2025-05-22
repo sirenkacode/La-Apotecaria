@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
         { nombre: "My Way – Armani", descripcion: "Jazmín, vainilla, bergamota.", imagen: "img/perfume1.jpg", fecha: "2024-06-01" },
         { nombre: "La Vie Est Belle – Lancôme", descripcion: "Pera, iris, praliné.", imagen: "img/perfume2.jpg", fecha: "2024-06-02" },
         { nombre: "Light Blue – D&G", descripcion: "Limón, manzana, cedro.", imagen: "img/perfume3.jpg", fecha: "2024-06-04" },
-        { nombre: "Fantasy – Britney Spears", descripcion: "Kiwi, chocolate blanco, almizcle.", imagen: "img/perfume4.jpg", fecha: "2024-06-05" },
-        { nombre: "Burberry Her Elixir", descripcion: "Fresa, ámbar, vainilla.", imagen: "img/perfume5.jpg", fecha: "2024-06-06" },
-        { nombre: "Angel Elixir – Mugler", descripcion: "Pimienta rosa, flor de azahar.", imagen: "img/perfume6.jpg", fecha: "2024-06-07" }
+        { nombre: "Fantasy – Britney Spears", descripcion: "Kiwi, chocolate blanco, almizcle.", imagen: "./assets/img/fantasy-bs.png", fecha: "2024-06-05" },
+        { nombre: "Burberry Her Elixir", descripcion: "Fresa, ámbar, vainilla.", imagen: "./assets/img/her-elixir-burberry.png", fecha: "2024-06-06" },
+        { nombre: "Angel Elixir – Mugler", descripcion: "Pimienta rosa, flor de azahar.", imagen: "./assets/img/my-way-ga.png", fecha: "2024-06-07" }
       ];
   
       const perfumesRecientes = perfumes.sort((a, b) => new Date(b.fecha) - new Date(a.fecha)).slice(0, 5);
@@ -69,16 +69,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
-    // Scroll suave
-    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
-      enlace.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
+
+// Scroll suave con offset global para evitar que la navbar tape las secciones
+document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+  enlace.addEventListener("click", function (e) {
+    e.preventDefault();
+    const idDestino = this.getAttribute("href").slice(1);
+    const seccion = document.getElementById(idDestino);
+
+    if (seccion) {
+      const offset = 100; // más espacio (antes era 100)
+      const posicion = seccion.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: posicion,
+        behavior: "smooth"
       });
-    });
+    }
+  });
+});
+
+
+    
+    
   
     // MODALES DE PACKS
     const packsInfo = {
@@ -251,6 +264,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
+      // MODALES para nuevos ingresos
+document.querySelectorAll(".card-perfume").forEach(card => {
+  card.addEventListener("click", () => {
+    const nombre = card.querySelector(".nombre").innerText;
+    const descripcion = card.querySelector(".desc").innerText;
+
+    document.getElementById("modalPerfumeTitle").innerText = nombre;
+    document.getElementById("modalPerfumeBody").innerText = descripcion;
+
+    new bootstrap.Modal(document.getElementById("modalPerfume")).show();
+  });
+});
+
+
       const navbarPerfumes = document.getElementById("navbarPerfumes");
 if (navbarPerfumes) {
   navbarPerfumes.addEventListener("click", function (e) {
@@ -263,3 +290,20 @@ if (navbarPerfumes) {
   
   });
   
+  const track = document.getElementById("trackTestimonios");
+const prev = document.getElementById("prevTestimonio");
+const next = document.getElementById("nextTestimonio");
+
+if (track && prev && next) {
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+  });
+
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+  });
+}
+
+document.querySelectorAll('img.no-interaction').forEach(img => {
+  img.addEventListener('contextmenu', e => e.preventDefault());
+});

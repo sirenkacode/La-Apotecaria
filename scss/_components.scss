@@ -11,6 +11,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1050;
+  
 
   .navbar-brand,
   .nav-link {
@@ -18,6 +19,9 @@ body {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+    position: relative;
   
 
     &:hover {
@@ -38,6 +42,21 @@ body {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
   }
+
+  &.dropdown-toggle::after {
+    margin-left: 0.4rem; // separador del ícono
+  }
+
+.nav-item:last-child .nav-link {
+  margin-right: 0; // evitar margen extra al final
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.4rem !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  top: 0.05rem !important;
+}
 }
 
 .dropdown-menu {
@@ -141,11 +160,17 @@ body {
   }
 }
 
+#quienes-somos,
+#nuevos-ingresos,
+#nuestros-servicios,
+#testimonios {
+  scroll-margin-top: 2rem;
+}
+
 .seccion-mision {
   height: 40vh; 
   background-color: #f6e8e4;
   color: #1a1a1a;
-  padding: 0 2rem;
   font-family: 'Playfair Display', serif;
 
   display: flex;
@@ -156,7 +181,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -195,7 +219,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   .nuevos-carrusel {
@@ -206,29 +230,59 @@ body {
   }
 
   .card-perfume {
-    width: 180px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
     font-family: 'Playfair Display', serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+  
     img {
       width: 100%;
-      border-radius: 0px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-      margin-bottom: 0.8rem;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 0;
+      object-fit: cover;
     }
-
+  
     .nombre {
       font-weight: 600;
       font-size: 1rem;
+      text-transform: uppercase;
     }
-
+  
     .desc {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       opacity: 0.7;
+      margin-top: 0.5rem;
     }
   }
+  .btn-solicitar {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    margin: 4rem 2rem 6rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+  
 }
 
 .seccion-servicios {
@@ -258,7 +312,7 @@ body {
     align-items: center;
 
     img {
-      width: 120%;
+      width: 100%;
       height: auto;
       margin-bottom: 1rem;
     }
@@ -272,10 +326,18 @@ body {
   }
 }
 
-.seccion-testimonios {
+.no-interaction {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+.seccion-testimonios-carousel {
   background-color: #fff;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 10rem;
   font-family: 'Playfair Display', serif;
+  position: relative;
 
   h2 {
     font-size: 2.5rem;
@@ -283,19 +345,43 @@ body {
     margin-bottom: 3rem;
   }
 
-  .testimonios-grid {
+  .carousel-wrapper {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
+    position: relative;
   }
 
-  .testimonio {
-    max-width: 300px;
+  .arrow {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #000;
+    padding: 0 1rem;
+    z-index: 2;
+
+    &:hover {
+      color: #cbb1a0;
+    }
+  }
+
+  .carousel-track {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    max-width: 80%;
+    gap: 2rem;
+  }
+
+  .testimonio-item {
+    flex: 0 0 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 1.5rem;
     font-style: italic;
-    font-size: 1.1rem;
-    color: #333;
-    position: relative;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
 
     p {
       margin-bottom: 0.5rem;
@@ -303,11 +389,26 @@ body {
 
     span {
       display: block;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #666;
     }
   }
+
+  @media (max-width: 768px) {
+    .carousel-track {
+      max-width: 100%;
+    }
+
+    .testimonio-item {
+      font-size: 1rem;
+    }
+
+    .arrow {
+      font-size: 2rem;
+    }
+  }
 }
+
 
 .footer-apotecaria {
   background-color: #000;

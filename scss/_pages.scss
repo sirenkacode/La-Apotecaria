@@ -14,24 +14,18 @@
     }
   }
   
-  #filosofia {
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
-  }
 
   .fondo-beige {
     background-color: #f2e9dc !important;
   }
   
   .seccion-decants {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
   
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
     }
   
@@ -76,15 +70,34 @@
     }
   }
 
+  #individuales {
+    padding-top: 6rem; 
+    scroll-margin-top: 2rem; 
+  }
+
+  #packs,
+  #personalizado {
+  scroll-margin-top: 2rem;
+  }
+
+  #stock,
+  #encargo,
+  #pedido-especial {
+  scroll-margin-top: 2rem;
+  }
+
+  
+
   .seccion-packs {
     background-color: #f2e9dc !important;
-    padding: 4rem 2rem;
-  
+    padding: 6rem 2rem;
     .titulo-packs {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
     }
   
     .packs-grid {
@@ -142,13 +155,13 @@
   
   .seccion-arma-pack {
     background-color: #fff;
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     text-align: center;
   
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -204,14 +217,14 @@
   }
 
   .seccion-perfumes {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     background-color: #fff;
   }
 
   .seccion-perfumes h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    margin: 2rem 0 2rem;
+    // margin: 2rem 0 2rem;
     text-transform: uppercase;
   }
 
@@ -254,6 +267,14 @@
     color: #555;
   }
 
+.espaciado-estandar {
+padding: 6rem 2rem;
+  
+h2 {
+margin-bottom: 2rem;
+}
+}
+
   // Fondo rosa solo para la sección de stock disponible
 .seccion-perfumes#stock {
   background-color: #f6e8e4;
@@ -264,6 +285,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 2rem;
+  padding: 6rem 2rem 6rem;
   justify-items: center;
 }
 
@@ -329,7 +351,7 @@
 
 .blog-section {
   background-color: #fff;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
 
   h2 {
     font-family: 'Playfair Display', serif;
@@ -380,7 +402,7 @@
 // Contacto
 .contacto {
   min-height: calc(100vh - 200px); // espacio para mantener el footer abajo
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   font-family: 'Playfair Display', serif;
   background-color: #f2e9dc;
 
@@ -507,6 +529,4 @@
       font-weight: 600;
     }
   }
-  
-
   

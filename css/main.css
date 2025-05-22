@@ -51,6 +51,9 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  position: relative;
 }
 .navbar .navbar-brand:hover,
 .navbar .nav-link:hover {
@@ -66,6 +69,18 @@ body {
 }
 .navbar .navbar-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar.dropdown-toggle::after {
+  margin-left: 0.4rem;
+}
+.navbar .nav-item:last-child .nav-link {
+  margin-right: 0;
+}
+.navbar .dropdown-toggle::after {
+  margin-left: 0.4rem !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  top: 0.05rem !important;
 }
 
 .dropdown-menu {
@@ -159,11 +174,17 @@ body {
   background-color: #cbb1a0;
 }
 
+#quienes-somos,
+#nuevos-ingresos,
+#nuestros-servicios,
+#testimonios {
+  scroll-margin-top: 2rem;
+}
+
 .seccion-mision {
   height: 40vh;
   background-color: #f6e8e4;
   color: #1a1a1a;
-  padding: 0 2rem;
   font-family: "Playfair Display", serif;
   display: flex;
   align-items: center;
@@ -173,7 +194,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -207,7 +227,7 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .seccion-nuevos .nuevos-carrusel {
   display: flex;
@@ -216,25 +236,52 @@ body {
   flex-wrap: wrap;
 }
 .seccion-nuevos .card-perfume {
-  width: 180px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
   font-family: "Playfair Display", serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+.seccion-nuevos .card-perfume:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 .seccion-nuevos .card-perfume img {
   width: 100%;
-  border-radius: 0px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-  margin-bottom: 0.8rem;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 0;
+  object-fit: cover;
 }
 .seccion-nuevos .card-perfume .nombre {
   font-weight: 600;
   font-size: 1rem;
+  text-transform: uppercase;
 }
 .seccion-nuevos .card-perfume .desc {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   opacity: 0.7;
+  margin-top: 0.5rem;
+}
+.seccion-nuevos .btn-solicitar {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  margin: 4rem 2rem 6rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+.seccion-nuevos .btn-solicitar:hover {
+  background-color: #333;
 }
 
 .seccion-servicios {
@@ -262,7 +309,7 @@ body {
   align-items: center;
 }
 .seccion-servicios .servicio img {
-  width: 120%;
+  width: 100%;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -273,36 +320,75 @@ body {
   text-align: center;
 }
 
-.seccion-testimonios {
-  background-color: #fff;
-  padding: 4rem 2rem;
-  font-family: "Playfair Display", serif;
+.no-interaction {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
-.seccion-testimonios h2 {
+
+.seccion-testimonios-carousel {
+  background-color: #fff;
+  padding: 4rem 2rem 10rem;
+  font-family: "Playfair Display", serif;
+  position: relative;
+}
+.seccion-testimonios-carousel h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
   margin-bottom: 3rem;
 }
-.seccion-testimonios .testimonios-grid {
+.seccion-testimonios-carousel .carousel-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-.seccion-testimonios .testimonio {
-  max-width: 300px;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #333;
   position: relative;
 }
-.seccion-testimonios .testimonio p {
+.seccion-testimonios-carousel .arrow {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #000;
+  padding: 0 1rem;
+  z-index: 2;
+}
+.seccion-testimonios-carousel .arrow:hover {
+  color: #cbb1a0;
+}
+.seccion-testimonios-carousel .carousel-track {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  max-width: 80%;
+  gap: 2rem;
+}
+.seccion-testimonios-carousel .testimonio-item {
+  flex: 0 0 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 1.5rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+}
+.seccion-testimonios-carousel .testimonio-item p {
   margin-bottom: 0.5rem;
 }
-.seccion-testimonios .testimonio span {
+.seccion-testimonios-carousel .testimonio-item span {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
+}
+@media (max-width: 768px) {
+  .seccion-testimonios-carousel .carousel-track {
+    max-width: 100%;
+  }
+  .seccion-testimonios-carousel .testimonio-item {
+    font-size: 1rem;
+  }
+  .seccion-testimonios-carousel .arrow {
+    font-size: 2rem;
+  }
 }
 
 .footer-apotecaria {
@@ -467,22 +553,17 @@ body {
   padding: 0.75rem 1.5rem;
 }
 
-#filosofia p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
 .fondo-beige {
   background-color: #f2e9dc !important;
 }
 
 .seccion-decants {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
 }
 .seccion-decants h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 .seccion-decants .grid-decants {
@@ -519,15 +600,33 @@ body {
   color: #666;
 }
 
+#individuales {
+  padding-top: 6rem;
+  scroll-margin-top: 2rem;
+}
+
+#packs,
+#personalizado {
+  scroll-margin-top: 2rem;
+}
+
+#stock,
+#encargo,
+#pedido-especial {
+  scroll-margin-top: 2rem;
+}
+
 .seccion-packs {
   background-color: #f2e9dc !important;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
 }
 .seccion-packs .titulo-packs {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
 }
 .seccion-packs .packs-grid {
   display: grid;
@@ -580,13 +679,13 @@ body {
 
 .seccion-arma-pack {
   background-color: #fff;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
 }
 .seccion-arma-pack h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -638,14 +737,13 @@ body {
 }
 
 .seccion-perfumes {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   background-color: #fff;
 }
 
 .seccion-perfumes h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
-  margin: 2rem 0 2rem;
   text-transform: uppercase;
 }
 
@@ -688,6 +786,13 @@ body {
   color: #555;
 }
 
+.espaciado-estandar {
+  padding: 6rem 2rem;
+}
+.espaciado-estandar h2 {
+  margin-bottom: 2rem;
+}
+
 .seccion-perfumes#stock {
   background-color: #f6e8e4;
 }
@@ -696,6 +801,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 2rem;
+  padding: 2rem 2rem 6rem;
   justify-items: center;
 }
 
@@ -754,7 +860,7 @@ body {
 
 .blog-section {
   background-color: #fff;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
 }
 .blog-section h2 {
   font-family: "Playfair Display", serif;
@@ -796,7 +902,7 @@ body {
 
 .contacto {
   min-height: calc(100vh - 200px);
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   font-family: "Playfair Display", serif;
   background-color: #f2e9dc;
 }

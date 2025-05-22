@@ -81,7 +81,7 @@
       <div class="carousel-item active">
         <div class="banner-slide" style="background-image: url('assets/img/banner1.png');">
           <div class="banner-overlay">
-            <h2>🌿 Bienvenida a La Apotecaria</h2>
+            <h2>Bienvenida</h2>
             <p>El placer de elegir tu perfume como un acto de amor propio.</p>
             <a href="/bienvenida.html" class="btn btn-light mt-3">Ver más</a>
           </div>
@@ -115,7 +115,7 @@
 
   <section class="seccion-mision" id="quienes-somos">
     <div class="mision-layout">
-      <img src="assets/img/hoja.png" alt="hoja decorativa" class="decoracion decoracion-hoja" />
+      <img src="assets/img/hoja.png" alt="hoja decorativa" class="decoracion decoracion-hoja no-interaction" />
       
       <div class="texto">
         <h2>Quienes somos</h2>
@@ -126,7 +126,7 @@
         </p>
       </div>
       
-      <img src="assets/img/rosa.png" alt="rosa decorativa" class="decoracion decoracion-rosa" />
+      <img src="assets/img/rosa.png" alt="rosa decorativa" class="decoracion decoracion-rosa no-interaction" />
     </div>
   </section>
 
@@ -136,8 +136,24 @@
       <div class="nuevos-carrusel" id="nuevos-carrusel">
         <!-- Aquí se insertarán los perfumes automáticamente con JS -->
       </div>
+      <a href="/perfumes.html" style="color:white"><button class="btn-solicitar">Ver todos</button></a>
     </div>
   </section>
+
+  <!-- Modal para nuevos ingresos -->
+  <div class="modal fade" id="modalPerfume" tabindex="-1" aria-labelledby="modalPerfumeTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPerfumeTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="modalPerfumeBody"></div>
+      </div>
+    </div>
+  </div>
+  
+
   
   
   <section class="seccion-servicios" id="nuestros-servicios">
@@ -145,40 +161,56 @@
       <h2>Nuestros Servicios</h2>
       <div class="servicios-grid">
         <div class="servicio">
-          <img src="assets/img/pago.png" alt="métodos de pago">
+          <img src="assets/img/pago.png" alt="métodos de pago" class="no-interaction">
           <p>Aceptamos efectivo, transferencia y MercadoPago</p>
         </div>
         <div class="servicio">
-          <img src="assets/img/stock.png" alt="stock y pedidos">
+          <img src="assets/img/stock.png" alt="stock y pedidos" class="no-interaction">
           <p>Tenemos stock y tomamos pedidos por encargo</p>
         </div>
         <div class="servicio">
-          <img src="assets/img/envio.png" alt="envíos">
+          <img src="assets/img/envio.png" alt="envíos" class="no-interaction">
           <p>Enviamos a todo el país</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="seccion-testimonios" id="testimonios">
+  <section class="seccion-testimonios-carousel" id="testimonios">
     <div class="container text-center">
       <h2>Testimonios</h2>
-      <div class="testimonios-grid">
-        <div class="testimonio">
-          <p>"Es como si cada perfume me abrazara desde otro recuerdo."</p>
-          <span>– Lucía G.</span>
+  
+      <div class="carousel-wrapper">
+        <button class="arrow left" id="prevTestimonio">‹</button>
+  
+        <div class="carousel-track" id="trackTestimonios">
+          <div class="testimonio-item">
+            <p>"Es como si cada perfume me abrazara desde otro recuerdo."</p>
+            <span>– Lucía G.</span>
+          </div>
+          <div class="testimonio-item">
+            <p>"Lo que más me gusta es que puedo confiar en cada sugerencia."</p>
+            <span>– Belu R.</span>
+          </div>
+          <div class="testimonio-item">
+            <p>"Siento que encontré un lugar secreto donde oler es resistir."</p>
+            <span>– Agustina S.</span>
+          </div>
+          <div class="testimonio-item">
+            <p>"Gracias a ustedes, elegí mi perfume para casarme."</p>
+            <span>– Emilia P.</span>
+          </div>
+          <div class="testimonio-item">
+            <p>"Me siento acompañada en cada elección que hago."</p>
+            <span>– Marina L.</span>
+          </div>
         </div>
-        <div class="testimonio">
-          <p>"Lo que más me gusta es que puedo confiar en cada sugerencia."</p>
-          <span>– Belu R.</span>
-        </div>
-        <div class="testimonio">
-          <p>"Siento que encontré un lugar secreto donde oler es resistir."</p>
-          <span>– Agustina S.</span>
-        </div>
+  
+        <button class="arrow right" id="nextTestimonio">›</button>
       </div>
     </div>
   </section>
+  
   
 
   <footer class="footer-apotecaria">
