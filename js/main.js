@@ -78,7 +78,7 @@ document.querySelectorAll('a[href^="#"]').forEach(enlace => {
     const seccion = document.getElementById(idDestino);
 
     if (seccion) {
-      const offset = 100; // más espacio (antes era 100)
+      const offset = 80; // más espacio (antes era 100)
       const posicion = seccion.getBoundingClientRect().top + window.scrollY - offset;
 
       window.scrollTo({
